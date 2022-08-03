@@ -1,6 +1,6 @@
 package week07;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Lab7i {
 

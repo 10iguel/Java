@@ -25,14 +25,18 @@ public class FinalExam2 {
 		do {
 			System.out.print("Please enter a number (or just hit enter to finish): ");
 			answer = in.nextLine();
-			if(!answer.equals("")) {
-				num = Integer.parseInt(answer);
-				numbers.add(num);
-			} else {
-				done = true;
+			try {
+				if(!answer.equals("")) {
+					num = Integer.parseInt(answer);
+					numbers.add(num);
+				} else {
+					done = true;
+				}
+			}catch (Exception e){
+				System.out.println("this is the problem " +e);
 			}
 		}while(!done);
-		
+
 		//Print final statement
 		System.out.printf("%n%nThe sum of the list of numbers is: %d.%nThe largest number in the list is: %d.", addNumbers(numbers), largestNumber(numbers));
 		
