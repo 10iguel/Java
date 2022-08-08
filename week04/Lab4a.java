@@ -19,29 +19,30 @@ public class Lab4a {
 		//Declare variables
 		String answer;				
 		int num = 0;				
-		int total;				
+		int total = 0;				
 		boolean valid = false;
 
 		do{
 			System.out.println("Please enter the number for which you wish to calculate its factorial:");
 			answer = in.nextLine();
 			try{
-				num = Integer.parseInt(answer);
+				total = factorial(Integer.parseInt(answer));
 				valid = true;
 			} catch (Exception e) {
 				System.out.println("Error.  Please input a valid number.");
 			}//End of try/catch
-			total = num;
 		} while (!valid);
-
-		do {
-			total = (total * (num - 1));
-			num -= 1;
-		} while (num != 1);
 
 		System.out.println("The factorial " + answer + "! is: " + total + ".");
 
 		in.close();
+	}
+
+	public static int factorial(int value) {
+		if (value == 1){
+			return 1;
+		}
+		return value * factorial(value -1);
 	}
 
 }
