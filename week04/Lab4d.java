@@ -29,13 +29,10 @@ public class Lab4d {
 		
 		do {
 			//Start game
-			System.out.println("This program is a guessing game.");
-			System.out.println("The computer will generate a random integer between 1 and 100. The user will try to guess the number.");
-			System.out.println("Let's get started!");
-			System.out.println("I'm thinking of a number between 1 and 100.");
+			 printText();
 			
 			//Generate random number and start guessCount
-			randNum = (int)(Math.random() * 100) + 1;
+			randNum =  randomNumber();
 
 			do {
 				do{
@@ -85,5 +82,13 @@ public class Lab4d {
 		System.out.println("Game over!");
 		in.close();
 	}
-	
+	public static int randomNumber(){
+		return (int)(Math.random() *100) +1;
+	}
+	public static void printText(){
+		System.out.println("This program is a guessing game.");
+		System.out.println("The computer will generate a random integer between 1 and 100. The user will try to guess the number.");
+		System.out.println("Let's get started!");
+		System.out.println("I'm thinking of a number between 1 and 100.");
+	}
 }

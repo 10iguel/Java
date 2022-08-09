@@ -25,41 +25,10 @@ public class Lab5a {
 			System.out.println(
 					"You will ask the user for the starting number, the ending number and the integer to be considered.");
 			// Ask for startNum and validate it
-			do {
-				System.out.print("Enter the starting number: ");
-				answer = in.nextLine();
-				try {
-					startNum = Integer.parseInt(answer);
-					valid = true;
-				} catch (Exception e) {
-					System.out.println("Error: Please enter a whole number.");
-				}
-			} while (!valid);
-			valid = false;
-			// Ask for endNum and validate it
-			do {
-				System.out.print("Enter the ending number: ");
-				answer = in.nextLine();
-				try {
-					endNum = Integer.parseInt(answer);
-					valid = true;
-				} catch (Exception e) {
-					System.out.println("Error: Please enter a whole number.");
-				}
-			} while (!valid);
-			valid = false;
-			// Ask for testNum and validate it
-			do {
-				System.out.print("Enter the test number: ");
-				answer = in.nextLine();
-				try {
-					testNum = Integer.parseInt(answer);
-					valid = true;
-				} catch (Exception e) {
-					System.out.println("Error: Please enter a whole number.");
-				}
-			} while (!valid);
-			valid = false;
+
+			startNum = validValues("Enter the starting number: ");
+			endNum = validValues("Enter the starting number: ");
+			testNum = validValues("Enter the starting number: ");
 			// Print text saying what we'll do
 			System.out.println("Here are the numbers between " + startNum + " and " + endNum + " that are divisible by "
 					+ testNum + ":");
@@ -86,5 +55,25 @@ public class Lab5a {
 			}
 		} while (!stopPlaying);
 		in.close();
+	}
+
+	public static int validValues(String text){
+		boolean valid = false;
+		String answer;
+		Scanner scanner = new Scanner(System.in);
+		int num = 0;
+
+		do{
+			System.out.print(text);
+			answer = scanner.nextLine();
+			try {
+				num = Integer.parseInt(answer);
+				valid = true;
+			} catch (Exception e) {
+				System.out.println("Error: Please enter a whole number.");
+			}
+		}while (!valid);
+
+		return num;
 	}
 }
