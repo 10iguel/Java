@@ -12,9 +12,9 @@ public class Game4D {
         int randNum = 0;
         boolean correctNumber = false;
 
-        do {
+        randNum =  randomNumber();
 
-            randNum =  randomNumber();
+        do {
             do {
                 System.out.println("What is your guess?");
                 answer = scanner.nextLine();
@@ -34,6 +34,7 @@ public class Game4D {
                 System.out.println("Low");
             }else {
                 correctNumber = true;
+                System.out.println("you i it in "+ guessedTries);
 
             }
 
