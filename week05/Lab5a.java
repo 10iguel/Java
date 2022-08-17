@@ -27,8 +27,8 @@ public class Lab5a {
 			// Ask for startNum and validate it
 
 			startNum = validValues("Enter the starting number: ");
-			endNum = validValues("Enter the starting number: ");
-			testNum = validValues("Enter the starting number: ");
+			endNum = validValues("Enter the end number: ");
+			testNum = validValues("Enter the test number: ");
 			// Print text saying what we'll do
 			System.out.println("Here are the numbers between " + startNum + " and " + endNum + " that are divisible by "
 					+ testNum + ":");
